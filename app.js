@@ -17,7 +17,7 @@ const serviceAccount = require("./bmf-web-ad848-firebase-adminsdk-fbsvc-cb90bbc8
 // Refer to picture for reference. It's the 2nd property.
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://bmf-web-ad848-default-rtdb.firebaseio.com/"
+  databaseURL: "https://bmf-web-ad848-default-rtdb.europe-west1.firebasedatabase.app/"
 });
 
 app.set('port', (process.env.PORT || 3001));
