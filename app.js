@@ -10,11 +10,11 @@ const app = express();
 // Enter the path to your service account json file below where it says "REPLACE_WITH_SERVICE_ACCOUNT"
 // If you need more help with this step go here: https://firebase.google.com/docs/admin/setup
 
-const serviceAccount = require("./bmf-web-ad848-firebase-adminsdk-fbsvc-cb90bbc834.json");
+const admin = require("firebase-admin");
 
-// TODO: Uncomment out line 17-21
-// Enter your database url from firebase where it says <DATABASE_NAME> below.
-// Refer to picture for reference. It's the 2nd property.
+// Chargement depuis une variable d'environnement
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://bmf-web-ad848-default-rtdb.firebaseio.com/"
